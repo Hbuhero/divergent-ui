@@ -122,9 +122,9 @@ const teamMembers: TeamMember[] = [
   {
     id: 1,
     name: "Akida Mwanga",
-    role: "Managing Directory",
+    role: "Director",
     bio: "15+ years experience in logistics and sustainable development across East Africa.",
-    image: "/images/team.jpg",
+    image: "/images/logo-only.png",
     linkedin: "#"
   },
   {
@@ -132,7 +132,7 @@ const teamMembers: TeamMember[] = [
     name: "Ayoub Lali",
     role: "Chief Executive Officer",
     bio: "Expert in supply chain management with a focus on agricultural commodities.",
-    image: "/images/mende.jpeg",
+    image: "/images/logo-only.png",
     linkedin: "#"
   },
   {
@@ -140,7 +140,7 @@ const teamMembers: TeamMember[] = [
   name: "Nuh Saidi",
   role: "Head of IT Department",
   bio: "IT professional specializing in system architecture, software development, and digital solutions that enhance business efficiency and innovation.",
-  image: "/images/team.jpg",
+  image: "/images/logo-only.png",
   linkedin: "#"
 }
 ];
@@ -258,7 +258,13 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#F0F2F5] overflow-x-hidden relative">
+      {/* Watermark Logo Container */}
+      <div className="fixed inset-0 z-0 flex items-center justify-center pointer-events-none opacity-[0.04]">
+        <img src="/images/transparent-logo2.png" alt="Watermark Background" className="w-[80vw] max-w-3xl object-contain drop-shadow-2xl grayscale" />
+      </div>
+
+      <div className="relative z-10">
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -385,7 +391,7 @@ const App: React.FC = () => {
       </section>
 
       {/* About Section */}
-      <section ref={aboutRef} className="py-24 bg-[#F8F9FA]">
+      <section ref={aboutRef} className="py-24 bg-white/50 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
@@ -499,7 +505,7 @@ const App: React.FC = () => {
       </section>
 
       {/* Services Section */}
-      <section ref={servicesRef} className="py-24">
+      <section ref={servicesRef} className="py-24 bg-white/30 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-1 bg-[#00A651]/10 text-[#00A651] rounded-full text-sm font-medium mb-4">WHAT WE OFFER</div>
@@ -610,47 +616,7 @@ const App: React.FC = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-[#F8F9FA]">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <div className="inline-block px-4 py-1 bg-[#00A651]/10 text-[#00A651] rounded-full text-sm font-medium mb-4">TESTIMONIALS</div>
-            <h2 className="text-5xl font-bold text-[#0A2540]">What our clients say</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="testimonial bg-white p-8 rounded-3xl border border-gray-100 flex flex-col"
-              >
-                <div className="flex-1">
-                  <div className="text-6xl text-[#00A651]/20 mb-4">“</div>
-                  <p className="text-lg text-gray-700 leading-relaxed">{testimonial.quote}</p>
-                </div>
-                
-                <div className="flex items-center gap-4 mt-8 pt-8 border-t border-gray-100">
-                  <img 
-                    src={testimonial.image} 
-                    alt={testimonial.name} 
-                    className="w-12 h-12 rounded-full object-cover" 
-                  />
-                  <div>
-                    <div className="font-semibold text-[#0A2540]">{testimonial.name}</div>
-                    <div className="text-sm text-gray-500">{testimonial.role}, {testimonial.company}</div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-24 bg-[#F8F9FA]">
+      <section className="py-24 bg-white/50 backdrop-blur-md border-t border-white/40">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-1 bg-[#00A651]/10 text-[#00A651] rounded-full text-sm font-medium mb-4">TESTIMONIALS</div>
@@ -690,7 +656,7 @@ const App: React.FC = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white/30 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-1 bg-[#00A651]/10 text-[#00A651] rounded-full text-sm font-medium mb-4">OUR PEOPLE</div>
@@ -714,7 +680,7 @@ const App: React.FC = () => {
                   <img 
                     src={member.image} 
                     alt={member.name} 
-                    className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700" 
+                    className="w-full h-50 object-contain group-hover:scale-110 transition-transform duration-700" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
                   
@@ -741,7 +707,7 @@ const App: React.FC = () => {
       </section>
 
       {/* Contact Section */}
-      <section ref={contactRef} className="py-24">
+      <section ref={contactRef} className="py-24 bg-white/60 backdrop-blur-lg border-t border-white/50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Form */}
@@ -792,20 +758,6 @@ const App: React.FC = () => {
                       placeholder="+255 712 345 678" 
                     />
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Interested In</label>
-                    <select 
-                      name="service" 
-                      value={formData.service}
-                      onChange={handleInputChange}
-                      className="w-full px-5 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:border-[#00A651] transition-colors bg-white"
-                    >
-                      <option value="">Select a service</option>
-                      {services.map(s => (
-                        <option key={s.id} value={s.title}>{s.title}</option>
-                      ))}
-                    </select>
-                  </div>
                 </div>
 
                 <div>
@@ -846,8 +798,8 @@ const App: React.FC = () => {
                     <div>
                       <div className="font-medium text-[#0A2540]">Our Office</div>
                       <div className="text-gray-600 mt-1">
-                        Dar es Salaam, Tanzania<br />
-                        Industrial Area, Ubungo
+                        Mkuranga, Pwani<br />
+                        Tanzania
                       </div>
                     </div>
                   </div>
@@ -885,18 +837,18 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="mt-8 rounded-3xl overflow-hidden border border-gray-200">
-                <div className="map-container h-72 bg-[#E8ECEF] flex items-center justify-center relative">
-                  <div className="text-center">
-                    <MapPin className="w-12 h-12 text-[#00A651] mx-auto mb-4" />
-                    <div className="font-semibold text-[#0A2540]">Dar es Salaam, Tanzania</div>
-                    <div className="text-sm text-gray-500 mt-1">Industrial Area, Ubungo</div>
-                  </div>
-                  <div className="absolute bottom-4 right-4 px-4 py-2 bg-white rounded-lg shadow text-xs text-gray-500">
-                    Interactive Map Coming Soon
-                  </div>
-                </div>
+              {/* Map Container */}
+              <div className="mt-8 rounded-3xl overflow-hidden border border-gray-200 shadow-sm h-80">
+                <iframe
+                  title="Divergent Tanzania Location"
+                  src="https://maps.google.com/maps?q=-7.1218674,39.2037708&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
           </div>
@@ -942,7 +894,7 @@ const App: React.FC = () => {
               <div className="space-y-4 text-sm">
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 mt-0.5 text-[#00A651]" />
-                  <div>Dar es Salaam, Tanzania<br />Industrial Area, Ubungo</div>
+                  <div>Mkuranga, Pwani<br />Tanzania</div>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-[#00A651]" />
@@ -992,6 +944,7 @@ const App: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      </div>
     </div>
   );
 };
