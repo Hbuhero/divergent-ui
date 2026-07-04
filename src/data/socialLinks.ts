@@ -11,7 +11,7 @@ export const socialLinks: SocialLink[] = [
     href: '#',
   },
   {
-    name: 'Facebook',
-    href: '#',
+    name: 'Instagram',
+    href: 'https://www.instagram.com/divergenttzltd',
   },
 ];
