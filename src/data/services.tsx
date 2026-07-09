@@ -34,7 +34,7 @@ export const services: Service[] = [
   },
   {
     id: 3,
-    slug: 'agribusiness-support',
+    slug: '#',
     title: 'Agribusiness Support',
     description:
       'Farmer empowerment, aggregation, and market access programs connecting producers to premium markets.',
@@ -49,7 +49,7 @@ export const services: Service[] = [
   },
   {
     id: 4,
-    slug: 'clean-energy',
+    slug: '#',
     title: 'Clean Energy Initiatives',
     description:
       'LPG distribution and sustainable energy solutions promoting environmental responsibility and energy access.',
