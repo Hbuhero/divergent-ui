@@ -9,7 +9,7 @@ export const services: Service[] = [
     description:
       'Secure storage and warehouse receipt systems for agricultural commodities with advanced inventory management.',
     icon: <Warehouse className="w-8 h-8" />,
-    image: '/images/service-warehouse.jpg',
+    image: '/images/ghala1.jpeg',
     features: [
       'Climate-controlled storage',
       'Real-time inventory tracking',

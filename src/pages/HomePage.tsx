@@ -23,7 +23,7 @@ export default function HomePage() {
 
   return (
     <>
-      <SEO path={ROUTES.home} />
+      <SEO path={ROUTES.home} preloadImages={['/images/hero-logistics.jpg']} />
       <HeroSection
         onScrollToServices={() => scrollToSection(servicesRef)}
         onScrollToContact={() => scrollToSection(contactRef)}

@@ -1,4 +1,6 @@
 import { Outlet } from 'react-router-dom';
+import { Analytics } from '../Analytics';
+import { OrganizationSchema } from '../schema';
 import { OptimizedImage } from '../ui/OptimizedImage';
 import { Footer } from './Footer';
 import { Navbar } from './Navbar';
@@ -18,9 +20,13 @@ function WatermarkBackground() {
 export function RootLayout() {
   return (
     <div className="min-h-screen bg-[#F0F2F5] overflow-x-hidden relative">
+      <OrganizationSchema />
+      <Analytics />
       <WatermarkBackground />
       <div className="relative z-10">
-        <Navbar />
+        <header>
+          <Navbar />
+        </header>
         <main>
           <Outlet />
         </main>

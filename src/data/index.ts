@@ -5,3 +5,8 @@ export { teamMembers } from './team';
 export { testimonials } from './testimonials';
 export { stats } from './stats';
 export { socialLinks } from './socialLinks';
+export { contactInfo } from './contact';
+export { generalFaqs, serviceFaqs, getAllFaqs, getFaqsForService } from './faq';
+export { recentWorkByService } from './recentWork';
+export { mediaItems, getGalleryItems, getMediaByService } from './media';
+export type { MediaItem, MediaCategory } from './media';

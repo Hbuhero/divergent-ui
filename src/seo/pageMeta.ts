@@ -57,22 +57,6 @@ export const pageMeta: PageMeta[] = [
     priority: 0.9,
   },
   {
-    path: '/services/agribusiness-support',
-    title: 'Agribusiness Support & Farmer Market Access | Divergent Tanzania',
-    description:
-      'Farmer training, crop aggregation and market access programs connecting Tanzanian producers to premium markets and financial inclusion.',
-    changefreq: 'monthly',
-    priority: 0.9,
-  },
-  {
-    path: '/services/clean-energy',
-    title: 'LPG Distribution & Clean Energy Solutions Tanzania | Divergent Tanzania',
-    description:
-      'LPG distribution, solar energy projects and clean cooking solutions promoting energy access and carbon reduction across Tanzania.',
-    changefreq: 'monthly',
-    priority: 0.9,
-  },
-  {
     path: '/contact',
     title: 'Contact Divergent Tanzania Limited | Mkuranga, Pwani',
     description:
@@ -85,6 +69,14 @@ export const pageMeta: PageMeta[] = [
     title: 'Frequently Asked Questions | Divergent Tanzania',
     description:
       "Answers to common questions about Divergent Tanzania's logistics, warehousing, agribusiness and clean energy services across Tanzania and East Africa.",
+    changefreq: 'monthly',
+    priority: 0.6,
+  },
+  {
+    path: '/media',
+    title: 'Media Gallery | Divergent Tanzania Operations & Projects',
+    description:
+      'Photos from Divergent Tanzania Limited — warehouse operations, logistics, agribusiness, clean energy, and facilities across Tanzania.',
     changefreq: 'monthly',
     priority: 0.6,
   },

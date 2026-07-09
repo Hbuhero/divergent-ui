@@ -73,6 +73,18 @@ export const IMAGE_META: Record<string, ImageMeta> = {
     height: 400,
     loading: 'lazy',
   },
+  '/images/ghala1.jpeg': {
+    alt: 'Divergent Tanzania warehouse team stacking agricultural commodity bags on pallets in Mkuranga',
+    width: 1200,
+    height: 900,
+    loading: 'lazy',
+  },
+  '/images/ghala2.jpeg': {
+    alt: 'Large-scale bagged produce storage at Divergent Tanzania Ltd warehouse facility in Tanzania',
+    width: 1200,
+    height: 900,
+    loading: 'lazy',
+  },
 };
 
 export function getImageMeta(src: string): ImageMeta | undefined {

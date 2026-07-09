@@ -1,6 +1,7 @@
 import { forwardRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Award, Clock, Mail, MapPin, Phone } from 'lucide-react';
+import { contactInfo } from '../../data/contact';
 
 interface FormData {
   name: string;
@@ -145,9 +146,9 @@ export const ContactSection = forwardRef<HTMLElement, ContactSectionProps>(
 
             <div className="lg:pl-8 pt-8 lg:pt-12">
               <div className="bg-[#F8F9FA] rounded-3xl p-10">
-                <h2 className="font-semibold text-2xl text-[#0A2540] mb-8">{infoHeading}</h2>
+                <h3 className="font-semibold text-2xl text-[#0A2540] mb-8">{infoHeading}</h3>
 
-                <div className="space-y-8">
+                <address className="not-italic space-y-8">
                   <div className="flex gap-5">
                     <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm">
                       <MapPin className="w-6 h-6 text-[#00A651]" />
@@ -155,9 +156,9 @@ export const ContactSection = forwardRef<HTMLElement, ContactSectionProps>(
                     <div>
                       <div className="font-medium text-[#0A2540]">Our Office</div>
                       <div className="text-gray-600 mt-1">
-                        Mkuranga, Pwani
+                        {contactInfo.addressLines[0]}
                         <br />
-                        Tanzania
+                        {contactInfo.addressLines[1]}
                       </div>
                     </div>
                   </div>
@@ -168,15 +169,15 @@ export const ContactSection = forwardRef<HTMLElement, ContactSectionProps>(
                     </div>
                     <div>
                       <div className="font-medium text-[#0A2540]">Phone</div>
-                      <a
-                        href="tel:+255656426585"
-                        className="text-gray-600 hover:text-[#00A651] transition-colors block mt-1"
-                      >
-                        +255 656 426 585
-                      </a>
-                      <a href="tel:+255787589945" className="text-gray-600 hover:text-[#00A651] transition-colors">
-                        +255 787 589 945
-                      </a>
+                      {contactInfo.phones.map((phone) => (
+                        <a
+                          key={phone.tel}
+                          href={`tel:${phone.tel}`}
+                          className="text-gray-600 hover:text-[#00A651] transition-colors block mt-1"
+                        >
+                          {phone.display}
+                        </a>
+                      ))}
                     </div>
                   </div>
 
@@ -187,10 +188,10 @@ export const ContactSection = forwardRef<HTMLElement, ContactSectionProps>(
                     <div>
                       <div className="font-medium text-[#0A2540]">Email</div>
                       <a
-                        href="mailto:info@divergenttz.co.tz"
+                        href={`mailto:${contactInfo.email}`}
                         className="text-gray-600 hover:text-[#00A651] transition-colors mt-1 block"
                       >
-                        info@divergenttz.co.tz
+                        {contactInfo.email}
                       </a>
                     </div>
                   </div>
@@ -202,13 +203,13 @@ export const ContactSection = forwardRef<HTMLElement, ContactSectionProps>(
                     <div>
                       <div className="font-medium text-[#0A2540]">Business Hours</div>
                       <div className="text-gray-600 mt-1">
-                        Monday – Friday: 8:00 AM – 6:00 PM
+                        {contactInfo.hours.weekdays}
                         <br />
-                        Saturday: 9:00 AM – 1:00 PM
+                        {contactInfo.hours.saturday}
                       </div>
                     </div>
                   </div>
-                </div>
+                </address>
               </div>
 
               <div className="mt-8 rounded-3xl overflow-hidden border border-gray-200 shadow-sm h-80">

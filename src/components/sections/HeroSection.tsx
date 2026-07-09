@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { OptimizedImage } from '../ui/OptimizedImage';
+import { contactInfo } from '../../data/contact';
+import { ROUTES } from '../../config/routes';
 
 interface HeroSectionProps {
   onScrollToServices: () => void;
@@ -60,6 +63,18 @@ export function HeroSection({
             >
               Contact Us
             </motion.button>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-8 text-sm text-white/80">
+            <a href={`tel:${contactInfo.primaryPhone.tel}`} className="hover:text-white transition-colors">
+              {contactInfo.primaryPhone.display}
+            </a>
+            <a href={`mailto:${contactInfo.email}`} className="hover:text-white transition-colors">
+              {contactInfo.email}
+            </a>
+            <Link to={ROUTES.faq} className="hover:text-white transition-colors">
+              FAQ
+            </Link>
           </div>
         </motion.div>
       </div>

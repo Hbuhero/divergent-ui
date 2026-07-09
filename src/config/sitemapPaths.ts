@@ -7,7 +7,7 @@ export const SITEMAP_PATHS: readonly string[] = [
   ROUTES.services,
   ROUTES.serviceDetail('logistics-supply-chain'),
   ROUTES.serviceDetail('warehouse-operations'),
-  ROUTES.serviceDetail('agribusiness-support'),
-  ROUTES.serviceDetail('clean-energy'),
   ROUTES.contact,
+  ROUTES.faq,
+  ROUTES.media,
 ];

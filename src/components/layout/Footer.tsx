@@ -2,15 +2,19 @@ import { Link } from 'react-router-dom';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { OptimizedImage } from '../ui/OptimizedImage';
 import { services, socialLinks } from '../../data';
+import { contactInfo } from '../../data/contact';
 import { ROUTES } from '../../config/routes';
 
 const quickLinks = [
   { label: 'About Us', to: ROUTES.about },
   { label: 'Our Services', to: ROUTES.services },
+  { label: 'Media Gallery', to: ROUTES.media },
+  { label: 'FAQ', to: ROUTES.faq },
   { label: 'Contact', to: ROUTES.contact },
 ];
 
 export function Footer() {
+  const activeSocialLinks = socialLinks.filter((s) => s.href.startsWith('http'));
   return (
     <footer className="bg-[#0A2540] text-white/90 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6">
@@ -28,10 +32,12 @@ export function Footer() {
             </p>
 
             <div className="flex gap-4">
-              {socialLinks.map((social) => (
+              {activeSocialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
+                  rel="noopener noreferrer"
+                  target="_blank"
                   className="text-white/50 hover:text-white transition-colors"
                 >
                   {social.name}
@@ -70,26 +76,36 @@ export function Footer() {
 
           <div className="md:col-span-4">
             <div className="font-semibold text-white mb-6">Contact Us</div>
-            <div className="space-y-4 text-sm">
+            <address className="not-italic space-y-4 text-sm">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 mt-0.5 text-[#00A651]" />
                 <div>
-                  Mkuranga, Pwani
+                  {contactInfo.addressLines[0]}
                   <br />
-                  Tanzania
+                  {contactInfo.addressLines[1]}
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[#00A651]" />
-                <div>+255 656 426 585 / +255 787 589 945</div>
+                <div>
+                  {contactInfo.phones.map((phone) => (
+                    <a
+                      key={phone.tel}
+                      href={`tel:${phone.tel}`}
+                      className="block hover:text-white transition-colors"
+                    >
+                      {phone.display}
+                    </a>
+                  ))}
+                </div>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#00A651]" />
-                <a href="mailto:info@divergenttz.co.tz" className="hover:text-white transition-colors">
-                  info@divergenttz.co.tz
+                <a href={`mailto:${contactInfo.email}`} className="hover:text-white transition-colors">
+                  {contactInfo.email}
                 </a>
               </div>
-            </div>
+            </address>
           </div>
         </div>
 

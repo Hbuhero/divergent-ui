@@ -20,9 +20,8 @@ export const ServicesGrid = forwardRef<HTMLElement, ServicesGridProps>(
                 Our Services
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Explore Divergent Tanzania&apos;s four core service lines — logistics and supply chain, warehouse
-                operations, agribusiness support, and clean energy — designed to drive growth across Tanzania&apos;s key
-                sectors.
+                Explore our logistics and warehouse operations — with agribusiness support and clean energy solutions
+                across Tanzania as part of our broader capabilities.
               </p>
             </div>
           ) : (

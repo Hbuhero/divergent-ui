@@ -4,6 +4,7 @@ import { ChevronDown } from 'lucide-react';
 import { Link, NavLink } from 'react-router-dom';
 import { OptimizedImage } from '../ui/OptimizedImage';
 import { services } from '../../data';
+import { contactInfo } from '../../data/contact';
 import { ROUTES } from '../../config/routes';
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
@@ -85,12 +86,26 @@ export function Navbar() {
             </AnimatePresence>
           </div>
 
+          <NavLink to={ROUTES.media} className={navLinkClass}>
+            Media
+          </NavLink>
+
+          <NavLink to={ROUTES.faq} className={navLinkClass}>
+            FAQ
+          </NavLink>
+
           <NavLink to={ROUTES.contact} className={navLinkClass}>
             Contact
           </NavLink>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
+          <a
+            href={`tel:${contactInfo.primaryPhone.tel}`}
+            className="hidden lg:flex items-center text-sm font-medium text-[#0A2540] hover:text-[#00A651] transition-colors"
+          >
+            {contactInfo.primaryPhone.display}
+          </a>
           <Link
             to={ROUTES.contact}
             className="hidden md:block px-6 py-2.5 bg-[#0A2540] hover:bg-[#1A1F2E] text-white rounded-lg font-medium transition-colors"
@@ -168,6 +183,14 @@ export function Navbar() {
                   </div>
                 )}
               </div>
+
+              <NavLink to={ROUTES.media} className={navLinkClass} onClick={closeMobileMenu}>
+                Media
+              </NavLink>
+
+              <NavLink to={ROUTES.faq} className={navLinkClass} onClick={closeMobileMenu}>
+                FAQ
+              </NavLink>
 
               <NavLink to={ROUTES.contact} className={navLinkClass} onClick={closeMobileMenu}>
                 Contact

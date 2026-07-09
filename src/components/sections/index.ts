@@ -6,3 +6,5 @@ export { TestimonialsSection } from './TestimonialsSection';
 export { TeamSection } from './TeamSection';
 export { ContactSection } from './ContactSection';
 export { ServiceDetailContent, RelatedServicesLinks } from './ServiceDetailContent';
+export { ServiceFaqSection } from './ServiceFaqSection';
+export { RecentWorkSection } from './RecentWorkSection';
