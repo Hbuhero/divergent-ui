@@ -56,7 +56,12 @@ export const ContactSection = forwardRef<HTMLElement, ContactSectionProps>(
 
   return (
     <>
-      <section ref={ref} className="py-24 bg-white/60 backdrop-blur-lg border-t border-white/50">
+      <section
+        ref={ref}
+        className={`bg-white/60 backdrop-blur-lg border-t border-white/50 ${
+          variant === 'page' ? 'pt-6 pb-16' : 'py-24'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
